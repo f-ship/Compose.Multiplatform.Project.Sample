@@ -1,0 +1,123 @@
+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
+
+git subtree split -P Engine -b Engine
+
+git remote add Engine.Server.Utils.ServerDrivenUI https://github.com/f-ship/Engine.Server.Utils.ServerDrivenUI
+git remote add Engine.Server.Utils.PushNotifications https://github.com/f-ship/Engine.Server.Utils.PushNotifications
+git remote add Engine.Server.Utils.Networking https://github.com/f-ship/Engine.Server.Utils.Networking
+git remote add Engine.Server.Utils.Monitoring.Performance https://github.com/f-ship/Engine.Server.Utils.Monitoring.Performance
+git remote add Engine.Server.Utils.Monitoring.Error https://github.com/f-ship/Engine.Server.Utils.Monitoring.Error
+git remote add Engine.Server.Utils.Monitoring.Crash https://github.com/f-ship/Engine.Server.Utils.Monitoring.Crash
+git remote add Engine.Server.Utils.Monitoring.Analytics https://github.com/f-ship/Engine.Server.Utils.Monitoring.Analytics
+git remote add Engine.Server.Utils.Monitoring https://github.com/f-ship/Engine.Server.Utils.Monitoring
+git remote add Engine.Server.Utils.Lexeme https://github.com/f-ship/Engine.Server.Utils.Lexeme
+git remote add Engine.Server.Utils.Accessibility https://github.com/f-ship/Engine.Server.Utils.Accessibility
+git remote add Engine.Server.Utils https://github.com/f-ship/Engine.Server.Utils
+git remote add Engine.Server.KSP https://github.com/f-ship/Engine.Server.KSP
+git remote add Engine.Server.Core https://github.com/f-ship/Engine.Server.Core
+git remote add Engine.Server https://github.com/f-ship/Engine.Server
+git remote add Engine.Sample.Server https://github.com/f-ship/Engine.Sample.Server
+git remote add Engine.Sample.Client https://github.com/f-ship/Engine.Sample.Client
+git remote add Engine.Sample https://github.com/f-ship/Engine.Sample
+git remote add Engine.KotlinGen.Writer https://github.com/f-ship/Engine.KotlinGen.Writer
+git remote add Engine.KotlinGen.TaskManager https://github.com/f-ship/Engine.KotlinGen.TaskManager
+git remote add Engine.KotlinGen.KSP.Writer https://github.com/f-ship/Engine.KotlinGen.KSP.Writer
+git remote add Engine.KotlinGen.KSP https://github.com/f-ship/Engine.KotlinGen.KSP
+git remote add Engine.KotlinGen.Gen https://github.com/f-ship/Engine.KotlinGen.Gen
+git remote add Engine.KotlinGen.DSL https://github.com/f-ship/Engine.KotlinGen.DSL
+git remote add Engine.KotlinGen https://github.com/f-ship/Engine.KotlinGen
+git remote add Engine.Client.Utils.ServerDrivenUI https://github.com/f-ship/Engine.Client.Utils.ServerDrivenUI
+git remote add Engine.Client.Utils.PushNotifications https://github.com/f-ship/Engine.Client.Utils.PushNotifications
+git remote add Engine.Client.Utils.Networking https://github.com/f-ship/Engine.Client.Utils.Networking
+git remote add Engine.Client.Utils.Monitoring.Performance https://github.com/f-ship/Engine.Client.Utils.Monitoring.Performance
+git remote add Engine.Client.Utils.Monitoring.Error https://github.com/f-ship/Engine.Client.Utils.Monitoring.Error
+git remote add Engine.Client.Utils.Monitoring.Crash https://github.com/f-ship/Engine.Client.Utils.Monitoring.Crash
+git remote add Engine.Client.Utils.Monitoring.Analytics https://github.com/f-ship/Engine.Client.Utils.Monitoring.Analytics
+git remote add Engine.Client.Utils.Monitoring https://github.com/f-ship/Engine.Client.Utils.Monitoring
+git remote add Engine.Client.Utils.Lexeme https://github.com/f-ship/Engine.Client.Utils.Lexeme
+git remote add Engine.Client.Utils.Accessibility https://github.com/f-ship/Engine.Client.Utils.Accessibility
+git remote add Engine.Client.Utils https://github.com/f-ship/Engine.Client.Utils
+git remote add Engine.Client.KSP https://github.com/f-ship/Engine.Client.KSP
+git remote add Engine.Client.Core https://github.com/f-ship/Engine.Client.Core
+git remote add Engine.Client https://github.com/f-ship/Engine.Client
+git remote add Engine https://github.com/f-ship/Engine
+
+git push Engine.Server.Utils.ServerDrivenUI Engine-Server-Utils-ServerDrivenUI
+git push Engine.Server.Utils.PushNotifications Engine-Server-Utils-PushNotifications
+git push Engine.Server.Utils.Networking Engine-Server-Utils-Networking
+git push Engine.Server.Utils.Monitoring.Performance Engine-Server-Utils-Monitoring-Performance
+git push Engine.Server.Utils.Monitoring.Error Engine-Server-Utils-Monitoring-Error
+git push Engine.Server.Utils.Monitoring.Crash Engine-Server-Utils-Monitoring-Crash
+git push Engine.Server.Utils.Monitoring.Analytics Engine-Server-Utils-Monitoring-Analytics
+git push Engine.Server.Utils.Monitoring Engine-Server-Utils-Monitoring
+git push Engine.Server.Utils.Lexeme Engine-Server-Utils-Lexeme
+git push Engine.Server.Utils.Accessibility Engine-Server-Utils-Accessibility
+git push Engine.Server.Utils Engine-Server-Utils
+git push Engine.Server.KSP Engine-Server-KSP
+git push Engine.Server.Core Engine-Server-Core
+git push Engine.Server Engine-Server
+git push Engine.Sample.Server Engine-Sample-Server
+git push Engine.Sample.Client Engine-Sample-Client
+git push Engine.Sample Engine-Sample
+git push Engine.KotlinGen.Writer Engine-KotlinGen-Writer
+git push Engine.KotlinGen.TaskManager Engine-KotlinGen-TaskManager
+git push Engine.KotlinGen.KSP.Writer Engine-KotlinGen-KSP-Writer
+git push Engine.KotlinGen.KSP Engine-KotlinGen-KSP
+git push Engine.KotlinGen.Gen Engine-KotlinGen-Gen
+git push Engine.KotlinGen.DSL Engine-KotlinGen-DSL
+git push Engine.KotlinGen Engine-KotlinGen
+git push Engine.Client.Utils.ServerDrivenUI Engine-Client-Utils-ServerDrivenUI
+git push Engine.Client.Utils.PushNotifications Engine-Client-Utils-PushNotifications
+git push Engine.Client.Utils.Networking Engine-Client-Utils-Networking
+git push Engine.Client.Utils.Monitoring.Performance Engine-Client-Utils-Monitoring-Performance
+git push Engine.Client.Utils.Monitoring.Error Engine-Client-Utils-Monitoring-Error
+git push Engine.Client.Utils.Monitoring.Crash Engine-Client-Utils-Monitoring-Crash
+git push Engine.Client.Utils.Monitoring.Analytics Engine-Client-Utils-Monitoring-Analytics
+git push Engine.Client.Utils.Monitoring Engine-Client-Utils-Monitoring
+git push Engine.Client.Utils.Lexeme Engine-Client-Utils-Lexeme
+git push Engine.Client.Utils.Accessibility Engine-Client-Utils-Accessibility
+git push Engine.Client.Utils Engine-Client-Utils
+git push Engine.Client.KSP Engine-Client-KSP
+git push Engine.Client.Core Engine-Client-Core
+git push Engine.Client Engine-Client
+git push Engine Engine
+
+git submodule add https://github.com/f-ship/Engine.Server.Utils.ServerDrivenUI Engine/Server/Utils/ServerDrivenUI
+git submodule add https://github.com/f-ship/Engine.Server.Utils.PushNotifications Engine/server/utils/PushNotifications
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Networking Engine/Server/Utils/Networking
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Monitoring.Performance Engine/Server/Utils/Monitoring/Performance
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Monitoring.Error Engine/Server/Utils/Monitoring/Error
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Monitoring.Crash Engine/Server/Utils/Monitoring/Crash
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Monitoring.Analytics Engine/Server/Utils/Monitoring/Analytics
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Monitoring Engine/Server/Utils/Monitoring
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Lexeme Engine/Server/Utils/Lexeme
+git submodule add https://github.com/f-ship/Engine.Server.Utils.Accessibility Engine/Server/Utils/Accessibility
+git submodule add https://github.com/f-ship/Engine.Server.Utils Engine/Server/Utils
+git submodule add https://github.com/f-ship/Engine.Server.KSP Engine/Server/KSP
+git submodule add https://github.com/f-ship/Engine.Server.Core Engine/Server/Core
+git submodule add https://github.com/f-ship/Engine.Server Engine/Server
+git submodule add https://github.com/f-ship/Engine.Sample.Server Engine/Sample/Server 
+git submodule add https://github.com/f-ship/Engine.Sample.Client Engine/Sample/Client
+git submodule add https://github.com/f-ship/Engine.Sample Engine/Sample
+git submodule add https://github.com/f-ship/Engine.KotlinGen.Writer Engine/KotlinGen/Writer
+git submodule add https://github.com/f-ship/Engine.KotlinGen.TaskManager Engine/KotlinGen/TaskManager
+git submodule add https://github.com/f-ship/Engine.KotlinGen.KSP.Writer Engine/KotlinGen/KSP/Writer
+git submodule add https://github.com/f-ship/Engine.KotlinGen.KSP Engine/KotlinGen/KSP
+git submodule add https://github.com/f-ship/Engine.KotlinGen.Gen Engine/KotlinGen/Gen
+git submodule add https://github.com/f-ship/Engine.KotlinGen.DSL Engine/KotlinGen/DSL
+git submodule add https://github.com/f-ship/Engine.KotlinGen Engine/KotlinGen
+git submodule add https://github.com/f-ship/Engine.Client.Utils.ServerDrivenUI Engine/Client/Utils/ServerDrivenUI
+git submodule add https://github.com/f-ship/Engine.Client.Utils.PushNotifications Engine/Client/Utils/PushNotifications
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Networking Engine/Client/Utils/Networking
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Monitoring.Performance Engine/Client/Utils/Monitoring/Performance
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Monitoring.Error Engine/Client/Utils/Monitoring/Error
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Monitoring.Crash Engine/Client/Utils/Monitoring/Crash
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Monitoring.Analytics Engine/Client/Utils/Monitoring/Analytics
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Monitoring Engine/Client/Utils/Monitoring
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Lexeme Engine/Client/Utils/Lexeme
+git submodule add https://github.com/f-ship/Engine.Client.Utils.Accessibility Engine/Client/Utils/Accessibility
+git submodule add https://github.com/f-ship/Engine.Client.Utils Engine/Client/Utils
+git submodule add https://github.com/f-ship/Engine.Client.KSP Engine/Client/KSP
+git submodule add https://github.com/f-ship/Engine.Client.Core Engine/Client/Core
+git submodule add https://github.com/f-ship/Engine.Client Engine/Client
+git submodule add https://github.com/f-ship/Engine Engine
