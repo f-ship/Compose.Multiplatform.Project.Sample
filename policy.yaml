@@ -1,0 +1,6 @@
+bindings:
+- members:
+  - principalSet://iam.googleapis.com/projects/420232371333/locations/global/workloadIdentityPools/github-pool/attribute.repository/f-ship/Compose.Multiplatform.Project.Sample
+  role: roles/iam.workloadIdentityUser
+etag: BwY2xoO3s6c=
+version: 1
