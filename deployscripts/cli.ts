@@ -194,10 +194,9 @@ async function main(inputArgs: string[]): Promise<void> {
     const submodules = await findAllSubmodules(repoPath)
     const modifiedSubmodules = submodules.filter((s) => s.status !== Status.Unchanged)
     console.log("Modified Modules", modifiedSubmodules);
-    modifiedSubmodules.reverse().forEach(async (s) => {
+    for (const s of modifiedSubmodules.reverse()) {
       console.log(s.path, s.status)
-      if (s.status === Status.Modified) {
-        console.log(s.path)
+      if (s.status !== Status.Unchanged && s.status !== Status.Ignored && s.status !== Status.Unknown) {
         await execCommand(["git", "add", "."], s.path)
         if (parsedArgs.amend) {
           await execCommand(["git", "commit", "--amend", "--no-edit"], s.path)
@@ -207,7 +206,7 @@ async function main(inputArgs: string[]): Promise<void> {
           await execCommand(["git", "push"], s.path)
         }
       }
-    })
+    }
   } else if (parsedArgs.status) {
     const submodules = await findAllSubmodules(repoPath)
     const modifiedSubmodules = submodules.filter((s) => s.status !== Status.Unchanged)
