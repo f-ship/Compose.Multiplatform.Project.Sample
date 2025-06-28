@@ -9,8 +9,8 @@ import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.*
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.OnFieldUpdateTrigger
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.OnStateUpdateTrigger
 import ship.f.engine.shared.utils.serverdrivenui.action.Action
-import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateFieldState
-import ship.f.engine.shared.utils.serverdrivenui.action.Target2
+import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateState
+import ship.f.engine.shared.utils.serverdrivenui.action.Target
 import ship.f.engine.shared.utils.serverdrivenui.state.*
 import ship.f.project.x.client.slices.login.LoginSubPub
 
@@ -53,7 +53,7 @@ object TestInitialization {
                                             OnStateUpdateTrigger(
                                                 action = Action.UpdateValue(
                                                     targetIds = listOf(
-                                                        Target2(
+                                                        Target(
                                                             id = ID(id = "TextFieldId", scope = ""),
                                                         )
                                                     )
@@ -71,7 +71,7 @@ object TestInitialization {
                                         ),
                                         triggerActions = listOf(
                                             OnFieldUpdateTrigger(
-                                                action = UpdateFieldState(),
+                                                action = UpdateState(),
                                             )
                                         )
                                     ),

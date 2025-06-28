@@ -2,12 +2,11 @@ package ship.f.project.x.client
 
 import kotlinx.serialization.encodeToString
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Component
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.OnFieldUpdateTrigger
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.OnToggleUpdateTrigger
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Widget
-import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateFieldState
-import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateToggled
+import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.*
+import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.*
+import ship.f.engine.shared.utils.serverdrivenui.action.Action.MatchValid
+import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateState
+import ship.f.engine.shared.utils.serverdrivenui.action.Target
 import ship.f.engine.shared.utils.serverdrivenui.id
 import ship.f.engine.shared.utils.serverdrivenui.state.*
 import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Resource
@@ -111,6 +110,7 @@ class Initialization {
             primary = 0xFFE64A19,
             onPrimary = 0xFFFFFFFF,
             onSecondaryContainer = 0xFF414651,
+            secondaryContainer = 0xFFFFFFFF,
             background = 0xFFF9F9F9,
             onBackground = 0xFF1C1C1E,
             surface = 0xFFFFFF,
@@ -123,6 +123,7 @@ class Initialization {
             primary = 0xFFE64A19,
             onPrimary = 0xFFFFFFFF,
             onSecondaryContainer = 0xFFCECFD2,
+            secondaryContainer = 0xFF1E1E1E,
             background = 0xFF1E1E1E,
             onBackground = 0xFFF1F1F1,
             surface = 0xFF121212,
@@ -177,7 +178,7 @@ class Initialization {
                             ),
                             triggerActions = listOf(
                                 OnFieldUpdateTrigger(
-                                    action = UpdateFieldState(),
+                                    action = UpdateState(),
                                 )
                             )
                         ),
@@ -199,7 +200,7 @@ class Initialization {
                             ),
                             triggerActions = listOf(
                                 OnFieldUpdateTrigger(
-                                    action = UpdateFieldState(),
+                                    action = UpdateState(),
                                 )
                             )
                         ),
@@ -210,7 +211,7 @@ class Initialization {
                             state = ToggleState(),
                             triggerActions = listOf(
                                 OnToggleUpdateTrigger(
-                                    action = UpdateToggled(),
+                                    action = UpdateState(),
                                 )
                             )
                         ),
@@ -219,6 +220,16 @@ class Initialization {
                             state = ButtonState(
                                 value = "Primary",
                                 buttonType = ButtonState.ButtonType.Primary,
+                            ),
+                            triggerActions = listOf(
+                                OnStateUpdateTrigger(
+                                    action = MatchValid(
+                                        targetIds = listOf(
+                                            Target(id = ID(id = "TextField-Email", scope = "")),
+                                            Target(id = ID(id = "TextField-Password", scope = "")),
+                                        )
+                                    )
+                                )
                             ),
                         ),
                         mSpace(),
