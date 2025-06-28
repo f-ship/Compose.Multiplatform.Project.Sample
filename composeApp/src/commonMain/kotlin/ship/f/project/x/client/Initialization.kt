@@ -107,6 +107,30 @@ class Initialization {
         ),
     )
     val remoteConfig = ScreenConfig(
+        lightColorScheme = ColorSchemeState(
+            primary = 0xFFE64A19,
+            onPrimary = 0xFFFFFFFF,
+            onSecondaryContainer = 0xFF414651,
+            background = 0xFFF9F9F9,
+            onBackground = 0xFF1C1C1E,
+            surface = 0xFFFFFF,
+            onSurface = 0xFF1C1C1E,
+            surfaceVariant = 0xFFF1F1F1,
+            onSurfaceVariant = 0xFF6E6E6E,
+            outline = 0xFFBDBDBD,
+        ),
+        darkColorScheme = ColorSchemeState(
+            primary = 0xFFE64A19,
+            onPrimary = 0xFFFFFFFF,
+            onSecondaryContainer = 0xFFCECFD2,
+            background = 0xFF1E1E1E,
+            onBackground = 0xFFF1F1F1,
+            surface = 0xFF121212,
+            onSurface = 0xFFF1F1F1,
+            surfaceVariant = 0xFF2A2A2A,
+            onSurfaceVariant = 0xFFB0B0B0,
+            outline = 0xFF444444,
+        ),
         state = listOf(
             Widget(
                 state = ColumnState(
@@ -161,7 +185,6 @@ class Initialization {
                         Component(
                             id = id("TextField-Password"),
                             state = FieldState(
-//                                placeholder = "●●●●●●●●",
                                 placeholder = "••••••••",
                                 label = "Password",
                                 value = "",
