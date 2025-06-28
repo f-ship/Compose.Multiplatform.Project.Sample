@@ -189,7 +189,6 @@ export function parseArguments(args: string[]): Args {
 async function main(inputArgs: string[]): Promise<void> {
   const parsedArgs = parseArguments(inputArgs)
   const repoPath = await getRepoPath(parsedArgs)
-  // console.log(parsedArgs)
   if (parsedArgs.commit || parsedArgs.amend) {
     const submodules = await findAllSubmodules(repoPath)
     const modifiedSubmodules = submodules.filter((s) => s.status !== Status.Unchanged)
