@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import ship.f.engine.client.utils.serverdrivenui.RenderingContext.CommonClient
+import ship.f.engine.client.utils.serverdrivenui.CommonClient
 import ship.f.engine.client.utils.serverdrivenui.components.ServerDrivenUITheme
 
 class MainActivity : ComponentActivity() {

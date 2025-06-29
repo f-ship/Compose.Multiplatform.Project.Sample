@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import ship.f.engine.client.utils.serverdrivenui.RenderScreen
-import ship.f.engine.client.utils.serverdrivenui.RenderingContext.CommonClient
+import ship.f.engine.client.utils.serverdrivenui.CommonClient
 import ship.f.engine.client.utils.serverdrivenui.components.ServerDrivenUITheme
 
 @Composable
