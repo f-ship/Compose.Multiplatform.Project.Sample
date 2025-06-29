@@ -1,6 +1,8 @@
 package ship.f.project.x.client
 
 import kotlinx.serialization.encodeToString
+import ship.f.engine.client.core.Config
+import ship.f.engine.client.core.SubPubConfig
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.*
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.*
@@ -11,8 +13,18 @@ import ship.f.engine.shared.utils.serverdrivenui.id
 import ship.f.engine.shared.utils.serverdrivenui.state.*
 import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Resource
 import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Url
+import ship.f.project.x.client.slices.login.LoginSubPub
 
 class Initialization {
+
+    private val engineConfig = Config(
+        subPubConfig = mapOf(
+            LoginSubPub::class to SubPubConfig(
+                build = { LoginSubPub() },
+                subPubs = mapOf()
+            )
+        )
+    )
     val textList: Array<out Component> = arrayOf(
         Component(
             state = TextState(

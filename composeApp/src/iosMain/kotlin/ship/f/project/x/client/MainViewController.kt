@@ -8,7 +8,7 @@ import ship.f.engine.client.utils.serverdrivenui.components.ServerDrivenUITheme
 
 fun MainViewController() = ComposeUIViewController {
     val config = remember(Unit) { Initialization().config }
-    val client = remember(Unit) { CommonClient().apply { init(config) } }
+    val client = remember(Unit) { CommonClient().apply { pushScreen(config) } }
     ServerDrivenUITheme {
         Column {
             App(

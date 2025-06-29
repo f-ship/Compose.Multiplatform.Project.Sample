@@ -15,13 +15,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val config = remember(Unit) { Initialization().config }
-            val client = remember(Unit) { CommonClient().apply { init(config) } }
+            val client = remember(Unit) { CommonClient().apply { pushScreen(Initialization().config) } }
             ServerDrivenUITheme {
                 Column {
                     App(
                         client = client,
-                        config = config,
                     )
                 }
             }
@@ -34,8 +32,7 @@ class MainActivity : ComponentActivity() {
 fun AppAndroidPreview() {
     ServerDrivenUITheme {
         App(
-            client = CommonClient().apply { init(Initialization().config) },
-            config = Initialization().config
+            client = CommonClient().apply { pushScreen(Initialization().config) },
         )
     }
 }
