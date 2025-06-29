@@ -206,6 +206,14 @@ async function main(inputArgs: string[]): Promise<void> {
         }
       }
     }
+    await execCommand(["git", "add", "."], repoPath)
+    if (parsedArgs.amend) {
+      await execCommand(["git", "commit", "--amend", "--no-edit"], repoPath)
+      await execCommand(["git", "push", "--force"], repoPath)
+    } else {
+      await execCommand(["git", "commit", "-m", parsedArgs.commit], repoPath)
+      await execCommand(["git", "push"], repoPath)
+    }
   } else if (parsedArgs.status) {
     const submodules = await findAllSubmodules(repoPath)
     const modifiedSubmodules = submodules.filter((s) => s.status !== Status.Unchanged)
