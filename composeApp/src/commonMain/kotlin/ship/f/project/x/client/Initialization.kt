@@ -4,15 +4,13 @@ import kotlinx.serialization.encodeToString
 import ship.f.engine.client.core.Config
 import ship.f.engine.client.core.SubPubConfig
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.*
-import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.TriggerAction.*
-import ship.f.engine.shared.utils.serverdrivenui.action.Action.MatchValid
-import ship.f.engine.shared.utils.serverdrivenui.action.Action.UpdateState
+import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Component
+import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Widget
+import ship.f.engine.shared.utils.serverdrivenui.action.Action
 import ship.f.engine.shared.utils.serverdrivenui.action.Target
 import ship.f.engine.shared.utils.serverdrivenui.id
 import ship.f.engine.shared.utils.serverdrivenui.state.*
 import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Resource
-import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Url
 import ship.f.project.x.client.slices.login.LoginSubPub
 
 class Initialization {
@@ -25,7 +23,7 @@ class Initialization {
             )
         )
     )
-    val textList: Array<out Component> = arrayOf(
+    val textList: Array<out Component<ComponentState>> = arrayOf(
         Component(
             state = TextState(
                 value = "DisplayL",
@@ -117,6 +115,133 @@ class Initialization {
             ),
         ),
     )
+
+    val exampleChildren =
+        listOf(
+            Component(
+                id = id("Local-Icon"),
+                state = ImageState(
+                    src = Resource(
+                        resource = "icon-back"
+                    ),
+                )
+            ),
+            Widget(
+                id = id("Empty-Column"),
+                state = ColumnState(
+                    arrangement = Arrangement.Flex,
+                    children = listOf()
+                )
+            ),
+            Component(
+                id = id("Unknown-Local-Icon"),
+                state = ImageState(
+                    src = Resource(
+                        resource = "gpt"
+                    ),
+                )
+            ),
+            Component(
+                id = id("Remote-Image"),
+                state = ImageState(
+                    src = ImageState.Source.Url(
+                        url = "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
+                    ),
+                )
+            ),
+            mSpace(),
+            Component(
+                id = id("TextField-Email"),
+                state = FieldState(
+                    placeholder = "Enter your email",
+                    label = "Email",
+                    value = "",
+                    validations = listOf(
+                        FieldState.Validation(
+                            regex = "\\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\\Z",
+                            error = "Please enter a valid email address",
+                            isRequired = true,
+                        )
+                    )
+                ),
+                triggerActions = listOf(
+                    ScreenConfig.TriggerAction.OnFieldUpdateTrigger(
+                        action = Action.UpdateState(),
+                    )
+                )
+            ),
+            mSpace(),
+            Component(
+                id = id("TextField-Password"),
+                state = FieldState(
+                    placeholder = "••••••••",
+                    label = "Password",
+                    value = "",
+                    fieldType = FieldState.FieldType.Password,
+                    validations = listOf(
+                        FieldState.Validation(
+                            regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+=])(?=\\S+$).{8,}$",
+                            error = "Password must contain at least one digit, lower case letter, upper case letter, special character and no whitespace",
+                            isRequired = true,
+                        )
+                    )
+                ),
+                triggerActions = listOf(
+                    ScreenConfig.TriggerAction.OnFieldUpdateTrigger(
+                        action = Action.UpdateState(),
+                    )
+                )
+            ),
+            mSpace(),
+            *textList,
+            mSpace(),
+            Component(
+                state = ToggleState(),
+                triggerActions = listOf(
+                    ScreenConfig.TriggerAction.OnToggleUpdateTrigger(
+                        action = Action.UpdateState(),
+                    )
+                )
+            ),
+            mSpace(),
+            Component(
+                state = ButtonState(
+                    value = "Primary",
+                    buttonType = ButtonState.ButtonType.Primary,
+                ),
+                triggerActions = listOf(
+                    ScreenConfig.TriggerAction.OnStateUpdateTrigger(
+                        action = Action.MatchValid(
+                            targetIds = listOf(
+                                Target(
+                                    id = ScreenConfig.ID(
+                                        id = "TextField-Email",
+                                        scope = ""
+                                    )
+                                ),
+                                Target(id = ScreenConfig.ID(id = "TextField-Password", scope = "")),
+                            )
+                        )
+                    )
+                ),
+            ),
+            mSpace(),
+            Component(
+                state = ButtonState(
+                    value = "Secondary",
+                    buttonType = ButtonState.ButtonType.Secondary,
+                ),
+            ),
+            mSpace(),
+            Component(
+                state = ButtonState(
+                    value = "Tertiary",
+                    buttonType = ButtonState.ButtonType.Tertiary,
+                ),
+            ),
+            mSpace(),
+        )
+
     val remoteConfig = ScreenConfig(
         lightColorScheme = ColorSchemeState(
             primary = 0xFFE64A19,
@@ -146,124 +271,16 @@ class Initialization {
         ),
         state = listOf(
             Widget(
+                id = id("Main-Column"),
                 state = ColumnState(
                     arrangement = Arrangement.Flex,
-                    children = listOf(
-                        Component(
-                            id = id("Local-Icon"),
-                            state = ImageState(
-                                src = Resource(
-                                    resource = "icon-back"
-                                ),
-                            )
-                        ),
-                        Component(
-                            id = id("Unknown-Local-Icon"),
-                            state = ImageState(
-                                src = Resource(
-                                    resource = "gpt"
-                                ),
-                            )
-                        ),
-                        Component(
-                            id = id("Remote-Image"),
-                            state = ImageState(
-                                src = Url(
-                                    url = "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-                                ),
-                            )
-                        ),
-                        mSpace(),
-                        Component(
-                            id = id("TextField-Email"),
-                            state = FieldState(
-                                placeholder = "Enter your email",
-                                label = "Email",
-                                value = "",
-                                validations = listOf(
-                                    FieldState.Validation(
-                                        regex = "\\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\\Z",
-                                        error = "Please enter a valid email address",
-                                        isRequired = true,
-                                    )
-                                )
-                            ),
-                            triggerActions = listOf(
-                                OnFieldUpdateTrigger(
-                                    action = UpdateState(),
-                                )
-                            )
-                        ),
-                        mSpace(),
-                        Component(
-                            id = id("TextField-Password"),
-                            state = FieldState(
-                                placeholder = "••••••••",
-                                label = "Password",
-                                value = "",
-                                fieldType = FieldState.FieldType.Password,
-                                validations = listOf(
-                                    FieldState.Validation(
-                                        regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*+=])(?=\\S+$).{8,}$",
-                                        error = "Password must contain at least one digit, lower case letter, upper case letter, special character and no whitespace",
-                                        isRequired = true,
-                                    )
-                                )
-                            ),
-                            triggerActions = listOf(
-                                OnFieldUpdateTrigger(
-                                    action = UpdateState(),
-                                )
-                            )
-                        ),
-                        mSpace(),
-                        *textList,
-                        mSpace(),
-                        Component(
-                            state = ToggleState(),
-                            triggerActions = listOf(
-                                OnToggleUpdateTrigger(
-                                    action = UpdateState(),
-                                )
-                            )
-                        ),
-                        mSpace(),
-                        Component(
-                            state = ButtonState(
-                                value = "Primary",
-                                buttonType = ButtonState.ButtonType.Primary,
-                            ),
-                            triggerActions = listOf(
-                                OnStateUpdateTrigger(
-                                    action = MatchValid(
-                                        targetIds = listOf(
-                                            Target(id = ID(id = "TextField-Email", scope = "")),
-                                            Target(id = ID(id = "TextField-Password", scope = "")),
-                                        )
-                                    )
-                                )
-                            ),
-                        ),
-                        mSpace(),
-                        Component(
-                            state = ButtonState(
-                                value = "Secondary",
-                                buttonType = ButtonState.ButtonType.Secondary,
-                            ),
-                        ),
-                        mSpace(),
-                        Component(
-                            state = ButtonState(
-                                value = "Tertiary",
-                                buttonType = ButtonState.ButtonType.Tertiary,
-                            ),
-                        ),
-                        mSpace(),
-                    )
+                    children = exampleChildren,
                 ),
             )
         )
     )
-    val encodedRemoteConfig = json.encodeToString(remoteConfig)
+    val encodedRemoteConfig = json.encodeToString(remoteConfig).apply {
+        println(this)
+    }
     val config = json.decodeFromString<ScreenConfig>(encodedRemoteConfig)
 }
