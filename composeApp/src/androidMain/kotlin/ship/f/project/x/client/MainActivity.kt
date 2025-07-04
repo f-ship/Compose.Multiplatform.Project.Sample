@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val client = remember(Unit) { CommonClient().apply { pushScreen(Initialization().config) } }
+            val client = remember(Unit) { CommonClient.getClient().apply { pushScreen(Initialization().config) } }
             ServerDrivenUITheme {
                 Column {
                     App(
@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 fun AppAndroidPreview() {
     ServerDrivenUITheme {
         App(
-            client = CommonClient().apply { pushScreen(Initialization().config) },
+            client = CommonClient.getClient().apply { pushScreen(Initialization().config) },
         )
     }
 }

@@ -35,7 +35,7 @@ fun App(
 fun AppPreview() {
     ServerDrivenUITheme {
         App(
-            client = CommonClient(),
+            client = CommonClient.getClient(),
         )
     }
 }
