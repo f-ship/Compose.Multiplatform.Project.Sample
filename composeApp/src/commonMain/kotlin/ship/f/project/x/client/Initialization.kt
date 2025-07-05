@@ -8,7 +8,8 @@ import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Component
 import ship.f.engine.shared.utils.serverdrivenui.ScreenConfig.Widget
 import ship.f.engine.shared.utils.serverdrivenui.action.Action
 import ship.f.engine.shared.utils.serverdrivenui.action.Target
-import ship.f.engine.shared.utils.serverdrivenui.id
+import ship.f.engine.shared.utils.serverdrivenui.action.Trigger
+import ship.f.engine.shared.utils.serverdrivenui.ext.id
 import ship.f.engine.shared.utils.serverdrivenui.state.*
 import ship.f.engine.shared.utils.serverdrivenui.state.ImageState.Source.Resource
 import ship.f.project.x.client.slices.login.LoginSubPub
@@ -164,8 +165,8 @@ class Initialization {
                         )
                     )
                 ),
-                triggerActions = listOf(
-                    ScreenConfig.TriggerAction.OnFieldUpdateTrigger(
+                triggers = listOf(
+                    Trigger.OnFieldUpdateTrigger(
                         action = Action.UpdateState(),
                     )
                 )
@@ -186,8 +187,8 @@ class Initialization {
                         )
                     )
                 ),
-                triggerActions = listOf(
-                    ScreenConfig.TriggerAction.OnFieldUpdateTrigger(
+                triggers = listOf(
+                    Trigger.OnFieldUpdateTrigger(
                         action = Action.UpdateState(),
                     )
                 )
@@ -197,8 +198,8 @@ class Initialization {
             mSpace(),
             Component(
                 state = ToggleState(),
-                triggerActions = listOf(
-                    ScreenConfig.TriggerAction.OnToggleUpdateTrigger(
+                triggers = listOf(
+                    Trigger.OnToggleUpdateTrigger(
                         action = Action.UpdateState(),
                     )
                 )
@@ -209,8 +210,8 @@ class Initialization {
                     value = "Primary",
                     buttonType = ButtonState.ButtonType.Primary,
                 ),
-                triggerActions = listOf(
-                    ScreenConfig.TriggerAction.OnStateUpdateTrigger(
+                triggers = listOf(
+                    Trigger.OnStateUpdateTrigger(
                         action = Action.MatchValid(
                             targetIds = listOf(
                                 Target(
