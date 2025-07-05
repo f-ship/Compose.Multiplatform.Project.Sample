@@ -10,7 +10,7 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "ProjectX",
     ) {
-        val client = remember(Unit) { CommonClient().apply { pushScreen(Initialization().config) } }
+        val client = remember(Unit) { CommonClient().apply { navigate(Initialization().config) } }
 
         App(
             client = client,

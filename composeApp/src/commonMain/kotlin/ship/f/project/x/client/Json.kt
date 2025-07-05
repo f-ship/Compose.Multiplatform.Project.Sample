@@ -36,6 +36,7 @@ val json = Json {
             subclass(DialogState::class)
             subclass(SnackBarState::class)
             subclass(LoaderState::class)
+            subclass(UnknownComponentState::class)
         }
 
         polymorphic(WidgetState::class) {
@@ -47,6 +48,7 @@ val json = Json {
             subclass(FlexColumnState::class)
             subclass(GridState::class)
             subclass(FlexGridState::class)
+            subclass(UnknownWidgetState::class)
         }
     }
 }

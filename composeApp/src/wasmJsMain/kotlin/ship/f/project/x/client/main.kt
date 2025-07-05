@@ -9,7 +9,7 @@ import ship.f.engine.client.utils.serverdrivenui.CommonClient
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     ComposeViewport(document.body!!) {
-        val client = remember(Unit) { CommonClient().apply { pushScreen(Initialization().config) } }
+        val client = remember(Unit) { CommonClient().apply { navigate(Initialization().config) } }
 
         App(
             client = client,

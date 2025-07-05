@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             // TODO this is a test initialization, needs to be wrapped inside a subpub for a proper initialization
-            val client = remember(Unit) { CommonClient.getClient().apply { pushScreen(Initialization().config) } }
+            val client = remember(Unit) { CommonClient.getClient().apply { navigate(Initialization().config) } }
             ServerDrivenUITheme {
                 App(
                     client = client,
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
 fun AppAndroidPreview() {
     ServerDrivenUITheme {
         App(
-            client = CommonClient.getClient().apply { pushScreen(Initialization().config) },
+            client = CommonClient.getClient().apply { navigate(Initialization().config) },
         )
     }
 }
