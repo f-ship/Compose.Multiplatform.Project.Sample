@@ -208,12 +208,14 @@ val exampleChildren =
                     )
                 ),
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ScreenConfigMeta(
-                            screenConfig = testConfig,
-                        ),
-                    )
+                    action = Action.Navigate(),
+                    metaID = id("Primary Button Meta"),
                 )
+            ),
+            metas = mapOf(
+                id("Primary Button Meta") to Meta.ScreenConfigMeta(
+                    screenConfig = testConfig,
+                ),
             ),
         ),
         mSpace(),
@@ -224,20 +226,22 @@ val exampleChildren =
             ),
             triggers = listOf(
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ElementConfigMeta(
-                            elementConfig = ElementConfig(
-                                inside = id("Main-Screen"),
-                                elements = listOf(
-                                    ScreenConfig.Component(
-                                        state = TextState(
-                                            value = "Been added from a secondary button 1",
-                                        )
-                                    )
+                    action = Action.Navigate(),
+                    metaID = id("Secondary Button 1"),
+                ),
+            ),
+            metas = mapOf(
+                id("Secondary Button 1") to Meta.ElementConfigMeta(
+                    elementConfig = ElementConfig(
+                        inside = id("Main-Screen"),
+                        elements = listOf(
+                            ScreenConfig.Component(
+                                state = TextState(
+                                    value = "Been added from a secondary button 1",
                                 )
-                            ),
-                        ),
-                    )
+                            )
+                        )
+                    ),
                 ),
             )
         ),
@@ -249,21 +253,23 @@ val exampleChildren =
             ),
             triggers = listOf(
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ElementConfigMeta(
-                            elementConfig = ElementConfig(
-                                inside = id("Main-Screen"),
-                                after = id("TextField-Password"),
-                                elements = listOf(
-                                    ScreenConfig.Component(
-                                        state = TextState(
-                                            value = "Been added from a secondary button 2",
-                                        )
-                                    )
+                    action = Action.Navigate(),
+                    metaID = id("Secondary Button 2"),
+                ),
+            ),
+            metas = mapOf(
+                id("Secondary Button 2") to Meta.ElementConfigMeta(
+                    elementConfig = ElementConfig(
+                        inside = id("Main-Screen"),
+                        after = id("TextField-Password"),
+                        elements = listOf(
+                            ScreenConfig.Component(
+                                state = TextState(
+                                    value = "Been added from a secondary button 2",
                                 )
-                            ),
-                        ),
-                    )
+                            )
+                        )
+                    ),
                 ),
             )
         ),
@@ -275,20 +281,22 @@ val exampleChildren =
             ),
             triggers = listOf(
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ElementConfigMeta(
-                            elementConfig = ElementConfig(
-                                inside = id("Empty-Column-Bottom"),
-                                elements = listOf(
-                                    ScreenConfig.Component(
-                                        state = TextState(
-                                            value = "Been added from a secondary button 3",
-                                        )
-                                    )
+                    action = Action.Navigate(),
+                    metaID = id("Secondary Button 3"),
+                ),
+            ),
+            metas = mapOf(
+                id("Secondary Button 3") to Meta.ElementConfigMeta(
+                    elementConfig = ElementConfig(
+                        inside = id("Empty-Column-Bottom"),
+                        elements = listOf(
+                            ScreenConfig.Component(
+                                state = TextState(
+                                    value = "Been added from a secondary button 3",
                                 )
-                            ),
-                        ),
-                    )
+                            )
+                        )
+                    ),
                 ),
             )
         ),
@@ -300,21 +308,23 @@ val exampleChildren =
             ),
             triggers = listOf(
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ElementConfigMeta(
-                            elementConfig = ElementConfig(
-                                inside = id("Empty-Column-Bottom"),
-                                after = id("Empty-Column-Bottom-Text 1"),
-                                elements = listOf(
-                                    ScreenConfig.Component(
-                                        state = TextState(
-                                            value = "Been added from a secondary button 4",
-                                        )
-                                    )
+                    action = Action.Navigate(),
+                    metaID = id("Secondary Button 4"),
+                ),
+            ),
+            metas = mapOf(
+                id("Secondary Button 4") to Meta.ElementConfigMeta(
+                    elementConfig = ElementConfig(
+                        inside = id("Empty-Column-Bottom"),
+                        after = id("Empty-Column-Bottom-Text 1"),
+                        elements = listOf(
+                            ScreenConfig.Component(
+                                state = TextState(
+                                    value = "Been added from a secondary button 4",
                                 )
-                            ),
-                        ),
-                    )
+                            )
+                        )
+                    ),
                 ),
             )
         ),
@@ -326,21 +336,23 @@ val exampleChildren =
             ),
             triggers = listOf(
                 Trigger.OnClickTrigger(
-                    action = Action.Navigate(
-                        configMeta = Meta.ElementConfigMeta(
-                            elementConfig = ElementConfig(
-                                inside = id("Empty-Column-Bottom"),
-                                after = id("Empty-Column-Bottom-Text 11"),
-                                elements = listOf(
-                                    ScreenConfig.Component(
-                                        state = TextState(
-                                            value = "Been added from a secondary button 5",
-                                        )
-                                    )
+                    action = Action.Navigate(),
+                    metaID = id("Secondary Button 5"),
+                ),
+            ),
+            metas = mapOf(
+                id("Secondary Button 5") to Meta.ElementConfigMeta(
+                    elementConfig = ElementConfig(
+                        inside = id("Empty-Column-Bottom"),
+                        after = id("Empty-Column-Bottom-Text 11"),
+                        elements = listOf(
+                            ScreenConfig.Component(
+                                state = TextState(
+                                    value = "Been added from a secondary button 5",
                                 )
-                            ),
-                        ),
-                    )
+                            )
+                        )
+                    ),
                 ),
             )
         ),
